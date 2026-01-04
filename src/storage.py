@@ -13,17 +13,17 @@ from task import Task
 #Ruta del archivo donde se guardan las tareas
 FILE_PATH = "data/tareas.json"
 
-def loadTasks():
+def load_tasks():
     #Carga las tareas desde el archivo JSON
     #Return lista de objetos tasks
 
-    #Si el archivo no existe, devolvemos la lista vacía
+    #Si el archivo no existe, devolvemos la lista vacia
     if not os.path.exists(FILE_PATH):
         return []
     
     try:
         with open(FILE_PATH, "r", encoding="utf-8") as file: #Con with open abrimos el archivo en modo lectura y con with nos aseguramos de que se va a cerrar solo
-            data = json.load(file) # Aquí leemos el json y data será una lista de diccionarios
+            data = json.load(file) # Aqui leemos el json y data sera una lista de diccionarios
 
             #Convertimos cada diccionario en un objeto task
             tasks = []
@@ -37,8 +37,8 @@ def loadTasks():
             return tasks
 
     except (json.JSONDecodeError, KeyError):
-        #Si el archivo está corrupto o mal formado
-        print("Error al leer el archivo de tareas, se iniciará vacío")
+        #Si el archivo esta corrupto o mal formado
+        print("Error al leer el archivo de tareas, se iniciara vacio")
         return []
 
 def save_tasks(tasks):

@@ -3,7 +3,7 @@
 task_manager.py
 Contiene la clase TaskManager, responsable de:
 - Gestionar la lista de tareas en memoria
-- Añadir, Completar, Listar y eliminar tareas
+- Anadir, Completar, Listar y eliminar tareas
 - Guardar los cambios usando el sistema de almacenamiento
 """
 
@@ -14,28 +14,28 @@ from task import Task
 from storage import load_tasks, save_tasks
 
 class TaskManager:
-	#Clase que centraliza toda la lógica del gestor de tareas
+	#Clase que centraliza toda la logica del gestor de tareas
 
 	def __init__(self):
 		"""
 
-		Constructor de la clase, se ejecuta automáticamente al crear una instancia:
+		Constructor de la clase, se ejecuta automaticamente al crear una instancia:
 
 			manager = TaskManager()
 
-		Aquí cargamos las tareas desde el archivo (JSON)
+		Aqui cargamos las tareas desde el archivo (JSON)
 		y las guardamos en memoria.
 		"""
 
 		self.tasks = load_tasks()
 
 	def add_task(self, title):
-		#Añade na tarea al sistema, title es el texto que define la tarea
+		#Anade una tarea al sistema, title es el texto que define la tarea
 
 		#Creamos una nueva tarea (por defecto no viene completada)
 		task = Task(title)
 
-		#La añadimos a la lista en memoria
+		#La anadimos a la lista en memoria
 		self.tasks.append(task)
 
 		#Guardamos los cambios en el achivo
@@ -73,7 +73,7 @@ class TaskManager:
 			save_tasks(self.tasks)
 
 		else:
-			print("Índice de tarea no válido")
+			print("Indice de tarea no valido")
 
 	def delete_task(self, index):
 		#Elimina una tarea del sistema, index es el indice en la lista
@@ -86,4 +86,4 @@ class TaskManager:
 			save_tasks(self.tasks)
 		
 		else:
-			print("Índice de tarea no válido")
+			print("Indice de tarea no valido")

@@ -12,15 +12,15 @@ class Task:
     def __init__(self, title, completed=False):
         """
 
-        Constructor de la clase task, se ejecuta automáticamente cuando creamos una tarea
+        Constructor de la clase task, se ejecuta automaticamente cuando creamos una tarea
         
             task=Task("Comprar pan")
 
         title: Nombre que describe la tarea
-        completed: Indica si está completada o no, por defecto es False
+        completed: Indica si esta completada o no, por defecto es False
         """
 
-        #Titulo o descripción de la tarea
+        #Titulo o descripcion de la tarea
         self.title = title
 
         #Estado de la tarea (True = completada, False = Penediente)
@@ -29,7 +29,7 @@ class Task:
     def __repr__(self): #Solamente sirve que para cuando se imrima una tarea lo puedas ver en debug
         """
 
-        Representación interna del objeto Task. Se usa principalmente para depuración (debug)
+        Representacion interna del objeto Task. Se usa principalmente para depuracion (debug)
         Ejemplo:
             Task(title='Comprar pan', completed=False)
         """
