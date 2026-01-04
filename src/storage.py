@@ -45,7 +45,7 @@ def save_tasks(tasks):
     #Guardar la lista de tareas en el archivo json, el parametro task es la lista de objetos Task
 
     #Aseguramos que la carpeta 'data' existe
-    os.makedirs(os.path.dirname(FILE_PATH), exists_ok=True)
+    os.makedirs(os.path.dirname(FILE_PATH), exist_ok=True)
 
     #Convertimos las tareas en diccionarios
     data = []

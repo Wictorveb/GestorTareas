@@ -25,7 +25,7 @@ def main():
 
     #Creamos una instancia del gestor de tareas
     #Aqui se cargaran las tareas desde el archivo JSON
-    manager = TaskManager
+    manager = TaskManager()
 
     #Bucle infinito, el programa se seguira ejecutando hasta que el usuario elija salir
     while True:
@@ -35,32 +35,32 @@ def main():
         option=input("Elige una opcion (1-5): ").strip()
 
         #Opcion 1: Anadir una nueva tarea
-        if option=="1":
-            title=input("Introduce el nombre de la tarea")
+        if option=="1": 
+            title=input("Introduce el nombre de la tarea: ").strip()
 
             #Validamos que el titulo no este vacio
             if title:
-                manager.ad_task(title)
+                manager.add_task(title)
                 print("Tarea anadida correctamente")
             else:
                 print("El titulo no puede estar vacio!")
 
         #Opcion 2: listar todas las tareas
-        if option=="2":
+        elif option=="2":
             manager.list_tasks()
 
         #Opcion 3: Marcar una actividad como realizada
-        if option=="3":
+        elif option=="3":
             manager.list_tasks()
             try:
                 index = int(input("Numero de tarea a completar: "))
-                manager.complete_task(index - 1)
+                manager.complete_tasks(index - 1)
                 print("Tarea marcada como completada")
             except ValueError:
                 print("Debes introducir un numero valido")
 
         #Opcion 4: Eliminar una tarea
-        if option=="4":
+        elif option=="4":
             manager.list_tasks()
             try:
                 index = int(input("Numero de la tarea a eliminar: "))
@@ -70,7 +70,7 @@ def main():
                 print("Debes introducir un numero valido")
 
         #Opcion 5: Salir del programa
-        if option=="5":
+        elif option=="5":
             print("Has decidido salir del programa")
             break
 
