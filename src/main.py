@@ -1,3 +1,13 @@
+"""
+
+main.py, el punto de entrada del gestor de tareas
+
+Este archivo se encarga de:
+- Mostrar el menú al usuario
+- Leer la entrada por teclado
+- LLamar a los métodos del task_manager
+"""
+
 #Importamos la clase principal que gestiona las tareas
 from task_manager import TaskManager
 
